@@ -3,7 +3,7 @@ package demo
 import org.springframework.web.bind.annotation.*
 
 @RestController
-class MessageController(val service: MessageService, val repo: MessageRepository) {
+class MessageController(val service: Service, val repo: Repository) {
     @GetMapping("/api")
     fun index(): List<Message> = service.findMessages()
 
