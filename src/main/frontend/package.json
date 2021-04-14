@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "ENV=local nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -11,7 +11,7 @@
     "lint": "npm run lint:js",
     "clean": "rimraf '../resources/static/*'",
     "copy": "cpx 'dist/**' '../resources/static/'",
-    "pro": "npm-run-all generate clean copy"
+    "pro": "ENV=production npm-run-all generate clean copy"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",

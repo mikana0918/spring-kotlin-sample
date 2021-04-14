@@ -1,4 +1,6 @@
 import { resolve } from 'path'
+const envPath = `.env.${process.env.ENV || 'local'}`
+require('dotenv').config({ path: envPath })
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -50,7 +52,7 @@ export default {
     [
       '@nuxtjs/dotenv',
       {
-        /* module options */
+        filename: envPath,
       },
     ],
   ],
@@ -63,7 +65,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://localhost:8080',
+    baseURL: process.env.API_ENDPOINT,
     credentials: true,
   },
 
@@ -73,7 +75,7 @@ export default {
   // @nuxtjs/proxyの設定
   proxy: {
     '/api': {
-      target: 'http://localhost:8080', // [TODO] デプロイする場合は環境変数で管理するなり
+      target: process.env.API_ENDPOINT, // [TODO] デプロイする場合は環境変数で管理するなり
       changeOrigin: true,
       secure: false,
     },
