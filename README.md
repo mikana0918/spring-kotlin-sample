@@ -15,13 +15,24 @@ TBD
 JDK1.8(supported with the included gradlew)
 
 # Setup
-## build
+## backend
+### build
 ```bash
 ./gradlew build
 ```
-## run
+### run
 ```bash
 ./gradlew bootRun
+```
+
+## frontend
+### dev
+```bash
+npm run dev
+```
+### prd
+```bash
+npm run pro
 ```
 
 # Others
