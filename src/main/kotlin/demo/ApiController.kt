@@ -11,6 +11,7 @@ class MessageController(val service: Service, val repo: Repository) {
     fun post(@RequestBody message: Message) {
         service.post(message)
     }
+
     @PostMapping("/api/edit/{id}")
     fun updateById(@PathVariable id: String, @RequestBody message: Message) {
         service.updateById(id, message)

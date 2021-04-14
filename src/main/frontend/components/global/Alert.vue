@@ -46,7 +46,7 @@ export default Vue.extend({
     }
   },
   watch: {
-    show(newValue: Boolean) {
+    show(newValue: boolean) {
       this.alert = newValue
     },
   },

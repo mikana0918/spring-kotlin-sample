@@ -65,8 +65,8 @@ export default Vue.extend({
       modalVisible: false,
       alertVisible: false,
       alertMessage: '',
-      alertColor: undefined,
-      alertIcon: undefined,
+      alertColor: '',
+      alertIcon: '',
       selectedMemo: undefined,
     }
   },
