@@ -1,4 +1,4 @@
-name: test with JUnit
+name: development build
 on: push
 jobs:
   build backend:
