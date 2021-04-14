@@ -14,7 +14,8 @@
     "lint": "npm run lint:js",
     "clean": "rimraf '../resources/static/*'",
     "copy": "cpx 'dist/**' '../resources/static/'",
-    "pro": "ENV=production npm-run-all generate clean copy"
+    "pro": "ENV=production npm-run-all generate clean copy",
+    "heroku-postbuild": "cd ./src/main/frontend && npm run pro"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
