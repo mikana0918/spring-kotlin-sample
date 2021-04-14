@@ -1,0 +1,1 @@
+web: cd src/main/frontend && npm run pro
