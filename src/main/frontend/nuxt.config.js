@@ -47,6 +47,12 @@ export default {
         /* module options */
       },
     ],
+    [
+      '@nuxtjs/dotenv',
+      {
+        /* module options */
+      },
+    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
