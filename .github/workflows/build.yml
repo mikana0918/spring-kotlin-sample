@@ -1,7 +1,7 @@
 name: development build
 on: push
 jobs:
-  build backend:
+  build_backend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,7 +13,7 @@ jobs:
         run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew build
-  build frontend:
+  build_frontend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
