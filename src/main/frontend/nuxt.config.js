@@ -1,9 +1,15 @@
+import { resolve } from 'path'
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+
+  alias: {
+    '@': resolve(__dirname, './'),
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -34,6 +40,13 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/proxy',
+    [
+      '@nuxtjs/vuetify',
+      {
+        /* module options */
+      },
+    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -47,4 +60,13 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // @nuxtjs/proxyの設定
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8080', // [TODO] デプロイする場合は環境変数で管理するなり
+      changeOrigin: true,
+      secure: false,
+    },
+  },
 }
